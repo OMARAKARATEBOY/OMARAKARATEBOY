@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oumar's Store</title>
+    <style>
+        @media screen and (max-width: 50em) {
+            .menu{
+                font-size: .8em;
+            }
+        }
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        #navbar:first-child {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 5px;
+            transform: scaleX(0);
+            transition: all .5s ease;
+            bottom: 0;
+            left: 0;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .product {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product button {
+            margin-left: 10px;
+        }
+
+        #cart {
+            margin-top: 20px;
+        }
+
+        #cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #cart ul li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .sizes {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .size {
+            margin: 5px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .size:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .featured-Products {
+           transition-delay: 50s;
+           height: 100%;
+           
+        }
+        .featured-Products:hover  {
+            
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background: var(--clr);
+            border-radius: 20px;
+ 
+         }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.pinimg.com/564x/86/0a/5b/860a5ba6a53c829c6618ddc6ab9039a3.jpg" alt="Oumar's Store Logo" style="width: 100px; height: auto;">
+        <h1 id="welcome-message">Welcome to Oumar's Store</h1>
+    </header>
+    <nav id="navbar">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#clothes">Clothes</a>
+        <a class="nav-link" href="#shoes">Shoes</a>
+        <a class="nav-link" href="#accessories">Accessories</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="#cart">Cart</a>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="home">
+            <header>Home</header>
+            <h2>Featured Products</h2>
+            <div class="featured-Products">
+            <p>Here are some of our top-selling items:</p>
+            <img src=" https://www.billionaire.com/dw/image/v2/BBKQ_PRD/on/demandware.static/-/Sites-billionaire-master-catalog/default/dwbcfcc6ca/images/large/RABS-MSB0642-BLE008N_24_stp.jpg?sw=603&sh=768" width="100vh" height="100vh">
+            <img src="https://sneakerask.nl/cdn/shop/files/FQ7928-001_1.webp?v=1721988695&width=1000" width="100vh" height="100vh" >
+            <img src="https://luxe-amsterdam.nl/cdn/shop/files/UbergrosseKapuzenpulloverStreetwear_Blast-Black-Front.png?v=1720161125&width=990" width="100vh" height="100vh">
+            <img src="https://www.pinkcube.nl/media/catalog/product/cache/58/large/800x/9df78eab33525d08d6e5fb8d27136e95/s/t/standaard-aluminium-rfid-kaarthouder-met-pu-portemonnee-deco.jpg" width="100vh" height="100vh">
+            <img src="https://img01.ztat.net/article/spp-media-p1/eee59bb9e6774e70ae1bab95d06f2bca/c5aeb29495434e0289268e31e8e9fb86.jpg?imwidth=1800&filter=packshot" width="100vh" height="100vh">
+            <img src=" https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTuS8ZujBSGprRTlE5zSxJDpnc0hP6zAbJ2TOmTNxL1i02gXhGc4s89cWxCBoQGRl9PmKU-tmsF-EVZKNVHw3gfiO4gcpHQr9GlszUdUCIwIEee5PtzOW7e309I2FbOuDIjaVeqkiWw6KA&usqp=CAc" width="100vh" height="100vh">
+        </div>
+            <div class="product-list" id="featured-products" style="display: none;">
+                <div class="product">
+                    <p>UltraFit Running Shoes <button onclick="addToCart('UltraFit Running Shoes')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>EcoSmart Hoodie <button onclick="addToCart('EcoSmart Hoodie')">Add to Cart</button></p>
+                    
+                </div>
+                <div class="product">
+                    <p>Leather Wallet <button onclick="addToCart('Leather Wallet')">Add to Cart</button></p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="clothes">
+            <header>Clothes</header>
+            <h2>Clothes</h2>
+            <p>Explore our collection of clothes:</p>
+            <div class="product-list">
+                <div class="product">
+                    <p>EcoSmart Hoodie <button onclick="addToCart('EcoSmart Hoodie')">Add to Cart</button></p>
+                    <img src="https://horsefeathers.b-cdn.net/data/tmp/0/0/111760_0.jpg?1721313227_1" alt="EcoSmart Hoodie" width="100vh" height="100vh">
+                    <p class="price">$120.00</p>
+                </div>
+                <div class="product">
+                    <p>Casual Denim Jacket <button onclick="addToCart('Casual Denim Jacket')">Add to Cart</button></p>
+                    <img src="https://img.kwcdn.com/thumbnail/s/b81d78900a6f4345fb8f64de0902016c_cb5f7d9054d4.jpg?imageView2/2/w/650/q/50/format/webp" width="100vh" height="100vh">
+                    <p class="price">$100.00</p>
+                </div>
+                <div class="product">
+                    <p>Graphic T-Shirt <button onclick="addToCart('Graphic T-Shirt')">Add to Cart</button></p>
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTCJ6EjRFjL3I6xNGyRsvLT4Sbl_f959i4exWvWNCwBaiMzSKdbJCCr4vbKz1sL1mXmFNQk-hc8vbwL791dPIj3jqyuFlbKKu3d8oPKX_1iKWNJiyDms29xow" width="100vh" height="100vh" alt="" >
+                    <p class="price">$75.00</p>
+                </div>
+                <div class="product">
+                    <p>Classic Chinos <button onclick="addToCart('Classic Chinos')">Add to Cart</button></p>
+                    <img src="https://teeshoppen.nl/cdn/shop/products/the-original-performance-pants-package-deal-3-pcs-622328.jpg?v=1708007694&width=1536" width="100vh" height="100vh">
+                    <p class="price">$95.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="shoes">
+            <header>Shoes</header>
+            <h2>Shoes</h2>
+            <p>Discover our range of shoes:</p>
+            <div class="product-list">
+                <div class="product">
+                    <p>Jordan Sneaker <button onclick="showProductDetails('Jordan Sneaker')">View Details</button></p>
+                    <image src="https://woovin.com/wp-content/uploads/2023/03/1-12.png" alt="jordan 4" width="200vh" height5="200vh">
+                        <p class="price">$275.00</p>
+                    </div>
+                <div class="product">
+                    <p>UltraFit Running Shoes <button onclick="addToCart('UltraFit Running Shoes')">Add to Cart</button></p>
+                    <img src="https://images.asics.com/is/image/asics/1011B600_404_SR_RT_GLB?$zoom$" alt="running shoes" width="100vh" heigth="auto">
+                    <p class="price">$175.00</p>
+                </div>
+                <div class="product">
+                    <p>Leather Loafers <button onclick="addToCart('Leather Loafers')">Add to Cart</button></p>
+                    <img src="https://eu.velasca.com/cdn/shop/files/04_giacalustra_n.jpg?v=1708422654" alt="leather loafers" width="100vh" heigth="auto">
+                    <p class="price">$125.00</p>
+                </div>
+                <div class="product">
+                    <p>Beach Flip-Flops <button onclick="addToCart('Beach Flip-Flops')">Add to Cart</button></p>
+                    <img src="https://assets.hermes.com/is/image/hermesproduct/izmir-sandal--152415ZH11-worn-1-0-0-800-800_g.jpg" width="100vh" height="100vh" >
+                    <p class="price">$55.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="accessories">
+            <header>Accessories</header>
+            <h2>Accessories</h2>
+            <p>Find the perfect accessory to complement your style:</p>
+            <div class="product-list">
+                <div class="product">
+                    <p>Leather Wallet <button onclick="addToCart('Leather Wallet')">Add to Cart</button></p>
+                    <img src=" https://bellroy-product-images.imgix.net/bellroy_dot_com_gallery_image/EUR/WHSD-RGN-113/0?auto=format&fit=max&w=1200" alt=" " width="100vh" height="100vh">
+                    <p class="price">$25.00</p>
+                </div>
+                <div class="product">
+                    <p>Sporty Sunglasses <button onclick="addToCart('Sporty Sunglasses')">Add to Cart</button></p>
+                    <img src=" https://kns-live.cdn.aboutyou.cloud/images/82bd958acb3956c5edbaa33da350ceb6.jfif?brightness=1&impolicy=imdb-transparent-background&width=640&height=854&quality=100&bg=FFFFFF" alt="" width="100vh" height="100vh">
+                    <p class="price">$65.00</p>
+                </div>
+                <div class="product">
+                    <p>Stylish Backpack <button onclick="addToCart('Stylish Backpack')">Add to Cart</button></p>
+                    <img src="https://cdn.aboutstatic.com/file/images/8cffb583c7bb37cc1b6a05600523389a.jpg?brightness=0.96&quality=75&trim=1&height=800&width=600" alt="" width="100vh" height="100vh">
+                    <p class="price">$100.00</p>
+                ç</div>
+                <div class="product">
+                    <p>Woolen Scarf <button onclick="addToCart('Woolen Scarf')">Add to Cart</button></p>
+                    <image src="https://le-scarf.com/cdn/shop/products/IMG_1348_3000x.jpg?v=1631251319" width="100vh" height="100vh" >
+                        <p class="price">$45.00</p>
+                    </div>
+            </div>
+        </section>
+        <section id="product-details" style="display: none;">
+            <header>Product Details</header>
+            <h2 id="product-title">Product Details</h2>
+            <div id="product-info">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+            <button onclick="addToCart(document.getElementById('product-title').textContent)">Add to Cart</button>
+        </section>
+        <section class="main-section" id="contact">
+            <header>Contact</header>
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us:</p>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        <section id="cart" class="main-section">
+            <header>Cart</header>
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be listed here -->
+            </ul>
+        </section>
+        <section class="main-section" id="payment">
+            <header>Payment</header>
+            <h2>Enter Payment Details</h2>
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                <div id="card-number-error" class="error"></div>
+        
+                <label for="expiry-date">Expiry Date (MM/YY):</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                <div id="expiry-date-error" class="error"></div>
+        
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="123" required>
+                <div id="cvv-error" class="error"></div>
+        
+                <button type="submit">Submit Payment</button>
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        &copy; 2024 Oumar's Store
+    </footer>
+    <script>
+        let cart = [];
+
+        function displayFeaturedProducts() {
+            const featuredProducts = document.getElementById('featured-products');
+            featuredProducts.style.display = 'block';
+        }
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                cartItems.appendChild(li);
+            });
+        }
+
+        function showProductDetails(product) {
+            const productDetails = document.getElementById('product-details');
+            const productTitle = document.getElementById('product-title');
+            const productInfo = document.getElementById('product-info');
+
+            // Set product details
+            productTitle.textContent = product;
+            productInfo.innerHTML = `<p>Details for ${product} go here.</p>`;
+            
+            // Show the details section
+            productDetails.style.display = 'block';
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            alert('Thank you for contacting us! We will get back to you soon.');
+            this.reset(); // Reset the form fields
+        });
+        // Function to validate card number using the Luhn algorithm
+function validateCardNumber(cardNumber) {
+    const sanitizedNumber = cardNumber.replace(/\D/g, '');
+    let sum = 0;
+    let shouldDouble = false;
+
+    for (let i = sanitizedNumber.length - 1; i >= 0; i--) {  
+        let digit = parseInt(sanitizedNumber.charAt(i), 10);
+
+        if (shouldDouble) {
+            digit *= 2;
+            if (digit > 9) {
+                digit -= 9;
+            }
+        }
+
+        sum += digit;
+        shouldDouble = !shouldDouble;
+    }
+
+    return (sum % 10 === 0);
+}
+
+// Function to validate expiry date format and check if it's in the future
+function validateExpiryDate(expiryDate) {
+    const [month, year] = expiryDate.split('/').map(part => part.trim());
+    const currentYear = new Date().getFullYear() % 100; // Last two digits of the current year
+    const currentMonth = new Date().getMonth() + 1; // Months are zero-indexed
+
+    const expMonth = parseInt(month, 10);
+    const expYear = parseInt(year, 10);
+
+    return (
+        !isNaN(expMonth) &&
+        !isNaN(expYear) &&
+        expMonth >= 1 && expMonth <= 12 &&
+        (expYear > currentYear || (expYear === currentYear && expMonth >= currentMonth))
+    );
+}
+
+// Function to validate CVV
+function validateCVV(cvv) {
+    return /^\d{3,4}$/.test(cvv);
+}
+
+// Function to validate the payment form
+function validatePaymentForm() {
+    const cardNumber = document.getElementById('card-number').value;
+    const expiryDate = document.getElementById('expiry-date').value;
+    const cvv = document.getElementById('cvv').value;
+
+    let isValid = true;
+
+    // Clear previous errors
+    document.getElementById('card-number-error').textContent = '';
+    document.getElementById('expiry-date-error').textContent = '';
+    document.getElementById('cvv-error').textContent = '';
+
+    // Validate card number
+    if (!validateCardNumber(cardNumber)) {
+        document.getElementById('card-number-error').textContent = 'Invalid card number.';
+        isValid = false;
+    }
+
+    // Validate expiry date
+    if (!validateExpiryDate(expiryDate)) {
+        document.getElementById('expiry-date-error').textContent = 'Invalid expiry date.';
+        isValid = false;
+    }
+
+    // Validate CVV
+    if (!validateCVV(cvv)) {
+        document.getElementById('cvv-error').textContent = 'Invalid CVV.';
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+// Add event listener to the payment form submit button
+document.getElementById('payment-form').addEventListener('submit', function(event) {
+    if (!validatePaymentForm()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    }
+});
+
+    </script>
+</body>
+</html>
