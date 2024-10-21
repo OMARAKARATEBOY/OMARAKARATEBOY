@@ -1,0 +1,308 @@
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oumar's Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+            font-size: 20px;
+        }
+        .product {
+            margin: 15px 0;
+        }
+        .product button {
+            margin-left: 10px;
+        }
+        #cart {
+            margin-top: 20px;
+        }
+        #cart ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #cart ul li {
+            background-color: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .sizes {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .size {
+            margin: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .size:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="new_logo.png" alt="Your Logo">
+        <h1 id="welcome-message">Welcome to Oumar's Store</h1>
+    </header>
+    <nav id="navbar">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#clothes">Clothes</a>
+        <a class="nav-link" href="#shoes" onclick="showProductDetails('Jordan Sneaker')">Shoes</a>
+        <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="home">
+            <header>Home</header>
+            <h2>Featured Products</h2>
+            <p>Here are some of our top-selling items:</p>
+            <button onclick="displayFeaturedProducts()">Show Featured Products</button>
+            <div class="product-list" id="featured-products" style="display: none;">
+                <div class="product">
+                    <p>Featured Product 1 <button onclick="addToCart('Featured Product 1')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>Featured Product 2 <button onclick="addToCart('Featured Product 2')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>Featured Product 3 <button onclick="addToCart('Featured Product 3')">Add to Cart</button></p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="clothes">
+            <header>Clothes</header>
+            <h2>Clothes</h2>
+            <p>Explore our collection of clothes:</p>
+            <div class="product-list">
+                <div class="product">
+                    <p>Clothes Product 1 <button onclick="addToCart('Clothes Product 1')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>Clothes Product 2 <button onclick="addToCart('Clothes Product 2')">Add to Cart</button></p>
+                </div>
+                <div class="product" >
+                    <p>Clothes Product 3 <button onclick="addToCart('Clothes Product 3')">Add to Cart</button></p>
+                </div>
+            </div>
+        </section>
+        <section class="main-section" id="shoes">
+            <header>Shoes</header>
+            <h2>Shoes</h2>
+            <p>Discover our range of shoes:</p>
+            <div class="product-list">
+                <div class="product">
+                    <p>Jordan Sneaker <button onclick="showProductDetails('Jordan Sneaker')">View Details</button></p>
+                </div>
+                <div class="product">
+                    <p>Shoes Product 2 <button onclick="addToCart('Shoes Product 2')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>Shoes Product 3 <button onclick="addToCart('Shoes Product 3')">Add to Cart</button></p>
+                </div>
+                <div class="product">
+                    <p>Shoes Product 4 <button onclick="addToCart('Shoes Product 4')">Add to Cart</button></p>
+                </div>
+            </div>
+        </section>
+        <section id="product-details" style="display: none;">
+            <header>Product Details</header>
+            <h2 id="product-title">Product Details</h2>
+            <div id="product-info">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+            <button onclick="addToCart('Jordan Sneaker')">Add to Cart</button>
+        </section>
+        <section class="main-section" id="contact">
+            <header>Contact</header>
+            <h2>Contact Us</h2>
+            <p>Have questions? Reach out to us:</p>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br><br>
+                <button type="submit">Submit</button>
+                <p> thªnks for details</P>
+            </form>
+        </section>
+        <section class="main-section" id="cart">
+            <header>Your Cart</header>
+            <div>
+            <h2>Your Cart</h2>
+            <p>plce your order here</p>
+            <ul id="cart-items">
+                <!-- Cart items will be displayed here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Oumar's Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dynamic Welcome Message
+        function updateWelcomeMessage() {
+            const hours = new Date().getHours();
+            let message = "Welcome to Oumar's Store";
+
+            if (hours < 12) {
+                message = "Good Morning! Welcome to Oumar's Store";
+            } else if ( hours < 18) {
+                message = "Good Afternoon! Welcome to Oumar's Store";
+            } else {
+                message = "Good Evening! Welcome to Oumar's Store";
+            }
+
+            document.getElementById('welcome-message').textContent = message;
+        }
+
+        // Form Validation
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (!name || !email) {
+                alert('Please fill out all required fields.');
+                event.preventDefault();
+            }
+        });
+
+        // Product Listing Interaction
+        const cart = [];
+
+        function addToCart(product) {
+            cart.push(product);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                cartItems.appendChild(li);
+            }); 
+        }
+
+        // Show Product Details
+        function showProductDetails(product) {
+            const productDetails = document.getElementById('product-details');
+            const productInfo = document.getElementById('product-info');
+            const productTitle = document.getElementById('product-title');
+            productTitle.textContent = product;
+
+            if (product === 'Jordan Sneaker') {
+                productInfo.innerHTML = `
+                    <p>Jordan Sneaker</p>
+                    <p>Description of Jordan Sneaker</p>
+                    <div class="sizes">
+                        <div class="size">Size 7</div>
+                        <div class="size">Size 8</div>
+                        <div class="size">Size 9</div>
+                        <div class="size">Size 10</div>
+                        <div class="size">Size 11</div>
+                        <div class="size">Size 12</div>
+                    </div>
+                `;
+            } else if (product === 'Shoes Product 2') {
+                productInfo.innerHTML = `
+                    <p>Shoes Product 2</p>
+                    <p>Description of Shoes Product 2</p>
+                    <div class="sizes">
+                        <div class="size">Size S</div>
+                        <div class="size">Size M</div>
+                        <div class="size">Size L</div>
+                    </div>
+                `;
+            } else if (product === 'Shoes Product 3') {
+                productInfo.innerHTML = `
+                    <p>Shoes Product 3</p>
+                    <p>Description of Shoes Product 3</p>
+                    <div class="sizes">
+                        rdiv class="size">Size 5</div>
+                        <div class="size">Size 6</div>
+                        <div class="size">Size 7</div>
+                    </div>
+                `;
+            }
+
+            productDetails.style.display = 'block';
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('clothes').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        // Show Featured Products
+        function displayFeaturedProducts() {
+            document.getElementById('featured-products').style.display = 'block';
+        }
+
+        // Initialize dynamic content
+        updateWelcomeMessage();
+    </script>
+   
+</body>
+</html>
